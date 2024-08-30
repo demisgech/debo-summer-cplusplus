@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cstdlib>
 
@@ -19,17 +20,6 @@ int main() {
     string result = isFound(numbers,size,12)? "Found!" : "Not found!";
     cout << result;
 
-  /*
-    for(int i =0; i < 5; i++) {
-        cout << "Numbers[" << i<< "]: ";
-        cin >> numbers[i];
-    }
-
-    cout << "Output:" << endl;
-    for(int i = 0; i < 5; i++)
-        cout << "Numbers[" << i << "]:" << numbers[i] << endl;
-
-  */
     return 0;
 
 }
