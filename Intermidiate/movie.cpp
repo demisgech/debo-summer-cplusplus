@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 struct Date {
@@ -25,7 +24,7 @@ struct Movie {
 
     // + - * / += -= ++ -- <<
     // Operator overloading
-
+/*
     bool operator==(const Movie& movieTwo) const {
         return (title == movieTwo.title &&
           releaseDate.year == movieTwo.releaseDate.year &&
@@ -33,8 +32,24 @@ struct Movie {
           releaseDate.day == movieTwo.releaseDate.day
         );
     }
+*/
 
 };
+
+bool operator==(const Movie& movieOne,const Movie& movieTwo) {
+    return (movieOne.title == movieTwo.title &&
+      movieOne.releaseDate.year == movieTwo.releaseDate.year &&
+      movieOne.releaseDate.month == movieTwo.releaseDate.month &&
+      movieOne.releaseDate.day == movieTwo.releaseDate.day
+    );
+}
+
+
+ostream& operator<<(ostream& os,const Movie& movieOne) {
+    os << movieOne.title << endl
+       << movieOne.releaseDate.year << endl;
+    return os;
+}
 
 void listOfMovies() {
    Date releaseDate = {1999,1,2};
@@ -99,13 +114,16 @@ int main() {
     Movie movieTwo = {"The Lion King",{1994,1,3}};
 
    // movieOne.operator==(movieTwo);
-    if(movieOne.equals(movieTwo))
+/* if(movieOne.equals(movieTwo))
         cout << "Equal";
     else cout << "Not equal";
 
     if(movieOne == movieTwo)
         cout << "Equal";
     else cout << "Not equal";
+*/
 
+
+    cout << movieOne;
     return 0;
 }

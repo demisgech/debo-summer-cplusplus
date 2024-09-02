@@ -13,6 +13,9 @@ struct Point {
     bool operator==(const Point& other) const {
         return ( x == other.x && y == other.y);
     }
+    bool operator!=(const Point& other) const {
+        return !( x == other.x && y == other.y);
+    }
 
     double distanceTo(const Point& other) const {
         return (sqrt(pow(x-other.x,2)+ pow(y-other.y,2)));
@@ -31,6 +34,11 @@ struct Point {
     }
 };
 
+ostream& operator<<(ostream& stream, const Point& point) {
+    return stream << "(" << point.x << "," << point.y << ")" << endl;
+}
+
+
 int main() {
     Point pointA = {1,1};
     Point pointB = {5,4};
@@ -38,14 +46,18 @@ int main() {
         cout << "Equal" << endl;
     else cout << "Not equal " << endl;
 
-     if(pointA == pointB)
-        cout << "Equal" << endl;
-    else cout << "Not equal " << endl;
+     if(pointA != pointB)
+        cout << "Not Equal" << endl;
+    else cout << "equal " << endl;
 
     double distance = pointA.distanceTo(pointB);
     cout << "Distance = " << distance << "m"<< endl;
 
     double area = pointA.getArea(pointB);
     cout << "Area = " << area << "m^2" << endl;
+
+    cout << pointA;
+
+
     return 0;
 }
