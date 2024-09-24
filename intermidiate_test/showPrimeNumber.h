@@ -1,0 +1,6 @@
+#ifndef SHOWPRIMENUMBER_H_INCLUDED
+#define SHOWPRIMENUMBER_H_INCLUDED
+
+void showPrimeNumber(int numberLimit);
+
+#endif // SHOWPRIMENUMBER_H_INCLUDED

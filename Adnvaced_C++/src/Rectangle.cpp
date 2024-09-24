@@ -1,30 +1,8 @@
+
 #include <iostream>
+#include "Rectangle.h"
 
 using namespace std;
-
-// Encapsulation principle
-class Rectangle {
-    public:
-    Rectangle() = default;
-    Rectangle(const Rectangle& source);
-    Rectangle(double width, double height);
-    Rectangle(double width, double height, double length);
-    ~Rectangle();
-    void draw();
-    double getArea();
-
-    void setWidth(double width);
-    double getWidth();
-
-    void setHeight(double height);
-    double getHeight();
-
-    private:
-    double width = 0;
-    double height = 0;
-    double length = 0;
-
-};
 Rectangle::Rectangle(const Rectangle& source) {
     cout << "Constructor copied" << endl;
     this->width = source.width;
@@ -75,42 +53,4 @@ void Rectangle::setHeight(double height) {
 
 double Rectangle::getHeight() {
     return height;
-}
-
-
-/*
-struct Rectangle {
-    private:
-    double width;
-    double height;
-};*/
-int main() {
-    Rectangle rectangleOne{12,13};
-    rectangleOne.setWidth(12);
-    //rectangleOne.draw();
-    //cout << "Rectangle Area = " << rectangleOne.getArea() << endl;
-
-    Rectangle rectanagleTwo{30,90};
-    rectanagleTwo.setWidth(1);
-    double width = rectanagleTwo.getWidth();
-    //cout << "Width: " << width << endl;;
-
-    rectanagleTwo.setHeight(20);
-    double height = rectanagleTwo.getHeight();
-    //cout << "Height: " << height << endl;
-
-    Rectangle rectanagleThree{10,20};
-    rectanagleThree.setWidth(12);
-    double width3 = rectanagleThree.getWidth();
-    cout << "Width : " << width3 <<endl;
-
-    Rectangle rectangleFour;
-
-    Rectangle rectangleFive{12,13,14};
-
-    Rectangle first;
-    Rectangle second = first;
-
-
-    return 0;
 }
